@@ -1,17 +1,23 @@
 #include <stdio.h>
 #include <string.h>
-
+#include <time.h>
 #define TRUE -1
 #define FALSE 0
 
 int main(){
-	int keepGoing = TRUE
+	srand(time(NULL));
+	int keepGoing = TRUE;
 	int correct, guess;
 	int turnCount = 0;
+	correct = rand();
+	correct = (correct % 100) + 1;
+	// debug
+	printf("Random #: ", "%d", correct);
+
 	char name[20];
 	printf("Hi! What is your name? ");
 	scanf("%s", name);
-	printf("Nice to meet you %s ", name, ". Let's play a game");
+	printf("Nice to meet you ", "%s", name,". Let's play a game");
 	
 	while (keepGoing){
 		turnCount++;
@@ -32,6 +38,5 @@ int main(){
 
 
 
-	
-}
-
+	return 0;
+} // end main
